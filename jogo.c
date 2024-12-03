@@ -15,7 +15,8 @@
 		submap = mapa auxiliar(contera apenas as informacoes do mapa original)
 	*/
 	
-	void playermove(){//MECANICA DE MOVIMENTO DO PLAYER==============================================================================================
+	void playermove(){ //MECANICA DE MOVIMENTO DO PLAYER==============================================================================================
+		input == tolower(input);
 		if(input == 'w'){
 			
 			if(map[x-1][y] != '*' && map[x-1][y] != 'D' && map[x-1][y] != '=' && map[x-1][y] != 'O' && map[x-1][y] != 'x' && map[x-1][y] != '@' && map[x-1][y] != '#' && map[x-1][y] != '+' && map[x-1][y] != ']'){
@@ -35,8 +36,8 @@
 					map[x][y] = ' ';
 				}
 				
-				map[x -1][y] = '&';
-				x = x -1;
+				map[x-1][y] = '&';
+				x = x - 1;
 			}
 	
 		}
@@ -80,8 +81,9 @@
 				else{
 					map[x][y] = ' ';
 				}
+				
 				map[x+1][y] = '&';
-				x = x+1;
+				x = x + 1;
 			}
 		}
 		else if(input == 'd'){
@@ -101,12 +103,120 @@
 				else{
 					map[x][y] = ' ';
 				}
+				
 				map[x][y+1] = '&';
 		 		y = y + 1;
 			}
 		}else if(input == 'q'){
 			mainmenu();
 		}
+	}
+	
+	void textofinal(){
+		printf("\t\t\t\t\t\t\t\t             ___________________________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t            /                                                 		\\\n");
+	    printf("\t\t\t\t\t\t\t\t           |    _____________________________________________________    |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | Parabéns, Bernardo. Você provou sua capacidade de   |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | enxergar além das aparências, de interpretar o que  |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | poucos conseguem compreender. Suas habilidades são  |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | raras, e sua determinação nos mostrou o que         |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | realmente importa: potencial para criar, adaptar e  |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | transformar. A partir deste momento, você  não é    |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | mais um espectador. Você foi escolhido.             |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   | Bem-vindo à Idopter Labs.                           |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |_____________________________________________________|   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |                                                             |\n");
+	    printf("\t\t\t\t\t\t\t\t            \\___________________________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                   \\_______________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                      ___________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t                   _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_\n");
+	    printf("\t\t\t\t\t\t\t\t                _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t             _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t          _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t       _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t      :-------------------------------------------------------------------------:\n");
+	    printf("\t\t\t\t\t\t\t\t      `---._.-------------------------------------------------------------._.---'\n");
+	    getch();
+	    
+	    sleep(2);
+	    
+	    system("cls");
+	    printf("\t\t\t\t\t\t\t\t             ___________________________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t            /                                                 		\\\n");
+	    printf("\t\t\t\t\t\t\t\t           |    _____________________________________________________    |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |_____________________________________________________|   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |                                                             |\n");
+	    printf("\t\t\t\t\t\t\t\t            \\___________________________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                   \\_______________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                      ___________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t                   _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_\n");
+	    printf("\t\t\t\t\t\t\t\t                _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t             _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t          _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t       _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t      :-------------------------------------------------------------------------:\n");
+	    printf("\t\t\t\t\t\t\t\t      `---._.-------------------------------------------------------------._.---'\n");
+	    
+	    sleep(2);
+	    
+	    system("cls");
+	    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t   ¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t   ¦        ¦¦        ¦¦  ¦¦¦¦  ¦\n");
+    	printf("\t\t\t\t\t\t\t\t\t\t\t   ¦  ¦¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦¦   ¦¦   ¦\n");
+    	printf("\t\t\t\t\t\t\t\t\t\t\t   ¦      ¦¦¦¦¦¦¦  ¦¦¦¦¦        ¦\n");
+   		printf("\t\t\t\t\t\t\t\t\t\t\t   ¦  ¦¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦¦  ¦  ¦  ¦\n");
+   		printf("\t\t\t\t\t\t\t\t\t\t\t   ¦  ¦¦¦¦¦¦¦¦        ¦¦  ¦¦¦¦  ¦\n");
+   		printf("\t\t\t\t\t\t\t\t\t\t\t   ¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n");
+   		
+	    printf("\n\t\t\t\t\t\t\t\t             ___________________________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t            /                                                 		\\\n");
+	    printf("\t\t\t\t\t\t\t\t           |    _____________________________________________________    |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                      /=======\\                      |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                     |         |                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                     |         |                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                     |   [?]   |                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                     |         |                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                     |         |                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                      \\=======/                      |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |                                                     |   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |   |_____________________________________________________|   |\n");
+	    printf("\t\t\t\t\t\t\t\t           |                                                             |\n");
+	    printf("\t\t\t\t\t\t\t\t            \\___________________________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                   \\_______________________________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t                      ___________________________________________\n");
+	    printf("\t\t\t\t\t\t\t\t                   _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_\n");
+	    printf("\t\t\t\t\t\t\t\t                _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t             _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t          _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t       _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_\n");
+	    printf("\t\t\t\t\t\t\t\t      :-------------------------------------------------------------------------:\n");
+	    printf("\t\t\t\t\t\t\t\t      `---._.-------------------------------------------------------------._.---'\n");
+	    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t          Obrigado por jogar!\n\n\t\t\t\t\t\t\t\t\t\t  --PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU--\n");
+	  	getch();
+		life = 5;
+		contfase = 0;
+		system("cls");
+		mainmenu();
 	}
 	
 	void perguntaTutorial(){
@@ -731,51 +841,17 @@
 	
 	void gameover(){
 		system("cls");
-		printf("\t\t\t\t\t                              _____              __  __   ______      ____   __      __  ______   _____  \n");
-		printf("\t\t\t\t\t                             / ____|     /\\     |  \\/  | |  ____|    / __ \\  \\ \\    / / |  ____| |  __ \\ \n");
-		printf("\t\t\t\t\t                            | |  __     /  \\    | \\  / | | |__      | |  | |  \\ \\  / /  | |__    | |__) |\n");
-		printf("\t\t\t\t\t                            | | |_ |   / /\\ \\   | |\\/| | |  __|     | |  | |   \\ \\/ /   |  __|   |  _  / \n");
-		printf("\t\t\t\t\t                            | |__| |  / ____ \\  | |  | | | |____    | |__| |    \\  /    | |____  | | \\ \\ \n");
-		printf("\t\t\t\t\t                             \\_____| /_/    \\_\\ |_|  |_| |______|    \\____/      \\/     |______| |_|  \\_\\\n");
-		printf("\t\t\t\t\t                                                                                                          \n");
-		printf("\t\t\t\t\t                                                                                                          \n");
-	  	printf(" \n\n\n\n\t\t\t\t  Parece que os monstros est?o se divertindo a sua custa. Ser? que voc? ? realmente t?o ruim em fugir? Talvez seja hora de aceitar o seu destino...\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t           --PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU--\n");
+		printf("\n\n\t\t\t\t\t\t\t\t¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n");
+		printf("\t\t\t\t\t\t\t\t¦¦      ¦¦¦¦      ¦¦¦  ¦¦¦¦  ¦¦        ¦¦¦¦¦¦¦¦¦      ¦¦¦  ¦¦¦¦  ¦¦        ¦¦       ¦¦\n");
+	    printf("\t\t\t\t\t\t\t\t¦  ¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦¦   ¦¦   ¦¦  ¦¦¦¦¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦¦  ¦¦¦¦  ¦¦  ¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦\n");
+	    printf("\t\t\t\t\t\t\t\t¦  ¦¦¦   ¦¦  ¦¦¦¦  ¦¦        ¦¦      ¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦¦¦  ¦¦  ¦¦¦      ¦¦¦¦       ¦¦\n");
+	    printf("\t\t\t\t\t\t\t\t¦  ¦¦¦¦  ¦¦        ¦¦  ¦  ¦  ¦¦  ¦¦¦¦¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦¦¦¦    ¦¦¦¦  ¦¦¦¦¦¦¦¦  ¦¦¦  ¦¦\n");
+	    printf("\t\t\t\t\t\t\t\t¦¦      ¦¦¦  ¦¦¦¦  ¦¦  ¦¦¦¦  ¦¦        ¦¦¦¦¦¦¦¦¦      ¦¦¦¦¦¦  ¦¦¦¦¦        ¦¦  ¦¦¦¦  ¦\n");
+	    printf("\t\t\t\t\t\t\t\t¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n");
+	  	printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t           --PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU--\n");
 	  	getch();
 		w = 0;
 		life = 3;
-		contfase = 0;
-		system("cls");
-		mainmenu();
-	}
-	
-	void ending(){
-		system("cls");
-		printf("\nAp?s escapar da Argo, Serruya comemora sua liberdade com bebidas e fortune dragon, pois o tigrinho n?o esta pagando. No entanto, ? medida\nque a luz do dia comeca a raiar,  Serruya tem um momento de lucidez e se lembra que faltam poucas horas para a aula da Alessandra, sua\nprofessora mais temida. Serruya passa mal s? de imaginar o olhar desapontado da professora ao descobrir sua aus?ncia.\n");
-		getch();
-		//system("cls");
-		printf("\nEnquanto a festan?a acontecia ao seu redor, Serruya percebe que, apesar de ter conseguido sobreviver, ainda existiam responsabilidades que\no aguardavam. ");
-		printf("Ele respira fundo e vai para a faculdade, com ressaca e triste por ter perdido todo o seu dinheiro apostando.\n");
-		getch();
-		//system("cls");
-		printf("\nDurante a aula da Alessandra, Serruya tentou acompanhar a explica??o sobre n?meros bin?rios, por?m, sucumbiu ao cansa?o novamente...\n");
-		getch();
-		//system("cls");
-		printf("\nO resto ? historia.\n");
-	    getch();
-		system("cls");
-		
-		
-		printf("\t\t\t\t\t                                                 ______ _____ __  __             ___   \n");
-		printf("\t\t\t\t\t                                                |  ____|_   _|  \\/  |           |__ \\  \n");
-		printf("\t\t\t\t\t                                                | |__    | | | \\  / |              ) | \n");
-		printf("\t\t\t\t\t                                                |  __|   | | | |\\/| |             / /  \n");
-		printf("\t\t\t\t\t                                                | |     _| |_| |  | |_   _   _   |_|   \n");
-		printf("\t\t\t\t\t                                                |_|    |_____|_|  |_(_) (_) (_)  (_)   \n");
-	  	printf(" \n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t          Obrigado por jogar!\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t         --PRESSIONE QUALQUER TECLA PARA VOLTAR AO MENU--\n");
-	  	getch();
-		w = 0;
-		life = 3;
-		contfase = 0;
 		system("cls");
 		mainmenu();
 	}
@@ -787,12 +863,64 @@
 		exit(0);
 		return 0;
 	}
+	//FINAL DO JOGO=========================================================================================================================================
+	int final(){
+		contfase = 0;
+		x = 15;
+		y = 10;	
+		for(i = 7; i <= 16; i++){
+			for(j = 8;j<=12; j++){
+				map[i][j] = '*';
+			}
+		}
+		
+		for(i = 8; i <= 15; i++){
+			for(j = 9;j<=11; j++){
+				map[i][j] = ' ';
+				submap[i][j] = ' ';
+			}
+		}
+		
+		map [9][10] = 'O';
+		map [10][10] = '=';
+		submap [9][10] = 'O';
+		submap [10][10] = '=';
+		
+		map [x][y] = '&';
 	
+	
+		//==========================================================================================================
+		while(life != 0){
+			printf("\n\n\n\n\n");	
+			printf("\n\n\n");		
+			printf("\n\n\n\n");
+			
+			for(i = 0; i <=20; i++){
+				printf("\t\t\t\t\t\t\t\t\t\t       ");
+				for(j = 0;j<=20; j++){
+					printf("%c ", map [i] [j]);
+				}
+				printf("\n");
+				
+			}
+			printf("\n\n\n\n\n");
+			input = getche();
+			playermove();
+			system("cls");
+		
+			if(input == 'i'){
+				if(map[x][y-1] == '=' || map[x][y-1] == 'O' || map[x][y+1] == '=' || map[x][y+1] == 'O' || map[x-1][y] == '=' || map[x-1][y] == 'O' || map[x+1][y] == '=' || map[x+1][y] == 'O'){
+					system("cls");
+					textofinal();
+				}
+			}
+		}
+	}
 	//FASE 3=========================================================================================================================================
 	int fase3(){
 		life = 5;
 		primeiraVezLendo = 1;
-		contfase = 1;
+		contfase = 3;
 		concluido = 0;
 		x = 13;
 		y = 10;	
@@ -840,13 +968,12 @@
 			//MENSAGENS DE LOGS=======================================================================================================
 			if (concluido == 1){
 				system("cls");
-				printf("\t\t\t\t\t\t\t\t\t\t       -- Bom trabalho, vamos seguir em frente --\n");
+				printf("\t\t\t\t\t\t\t\t\t\t\t\t       -- Muito bem --\n");
 				printf("\t\t\t\t\t\t\t\t\t\t          Aperte qualquer botão para continuar");
 				getch();
 				system("cls");
-				saida();
+				final();
 			}
-		
 		
 			printf("\n\n\n\n");
 			for(i = 0; i <=20; i++){
@@ -888,21 +1015,17 @@
 			
 			else if(input == 'k'){
 				life--;
-				
-				if(life == 0){
-					gameover();
-				}	
-				else{
-				}
 			}
 		}
+		system("cls");
+		gameover();
 	}
 	
 	//FASE 2=========================================================================================================================================
 	int fase2(){
 		life = 5;
 		primeiraVezLendo = 1;
-		contfase = 1;
+		contfase = 2;
 		concluido = 0;
 		x = 13;
 		y = 10;	
@@ -950,8 +1073,7 @@
 				system("cls");
 				fase3();
 			}
-		
-		
+			
 			printf("\n\n\n\n");
 			for(i = 0; i <=20; i++){
 				printf("\t\t\t\t\t\t\t\t\t\t       ");
@@ -986,14 +1108,10 @@
 			
 			else if(input == 'k'){
 				life--;
-				
-				if(life == 0){
-					gameover();
-				}	
-				else{
-				}
 			}
 		}
+		system("cls");
+		gameover();
 	}
 	//FASE 1=========================================================================================================================================
 	int fase1(){
@@ -1047,8 +1165,7 @@
 				system("cls");
 				fase2();
 			}
-		
-		
+
 			printf("\n\n\n\n");
 			for(i = 0; i <=20; i++){
 				printf("\t\t\t\t\t\t\t\t\t\t       ");
@@ -1082,15 +1199,11 @@
 			}
 			
 			else if(input == 'k'){
-				life--;
-				
-				if(life == 0){
-					gameover();
-				}	
-				else{
-				}
+				life--;	
 			}
 		}
+		system("cls");
+		gameover();
 	}
 	//TUTORIAL=========================================================================================================================================
 	int faseTutorial(){
@@ -1139,9 +1252,10 @@
 			if (concluido == 1){
 				printf("\t\t\t\t\t\t\t\t\t       -- Muito bem, vamos começar os verdadeiros testes agora --\n");
 				printf("\t\t\t\t\t\t\t\t\t\t          Aperte qualquer botão para continuar");
+				getch();
+				system("cls");
 				fase1();
 			}
-		
 		
 			printf("\n\n\n\n");
 			for(i = 0; i <=20; i++){
@@ -1179,15 +1293,11 @@
 			}
 			
 			else if(input == 'k'){
-				life--;
-				
-				if(life == 0){
-					gameover();
-				}	
-				else{
-				}
+				life--;	
 			}
 		}
+		system("cls");
+		gameover();
 	}
 	void textoinicial(){
 		printf("\t\t\t\t\t\t\t\t             ___________________________________________________________\n");
@@ -1387,7 +1497,7 @@
 		
 	    do {
 	    	system("cls");
-
+	    	
 		    printf("\t\t\t\t\t\t\t¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦\n");
 		    printf("\t\t\t\t\t\t\t¦       ¦¦¦       ¦¦¦¦      ¦¦¦        ¦¦        ¦¦        ¦¦¦      ¦¦¦¦¦¦¦¦¦        ¦¦¦      ¦¦¦        ¦\n");
 		    printf("\t\t\t\t\t\t\t¦  ¦¦¦¦  ¦¦  ¦¦¦¦  ¦¦  ¦¦¦¦  ¦¦¦¦¦¦¦¦  ¦¦  ¦¦¦¦¦¦¦¦¦¦¦  ¦¦¦¦¦  ¦¦¦¦  ¦¦¦¦¦¦¦¦  ¦¦¦¦¦¦¦¦  ¦¦¦¦  ¦¦¦¦¦  ¦¦¦¦\n");
@@ -1405,33 +1515,76 @@
 	        system("cls");
 	        int w = 1;
 	        if (input == 'a') {
-	        	do{
-	        		system("cls");
-	        		printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t  Deseja jogar o tutorial? S ou N");
-	        		input = getche();
-	        		input = tolower(input);
-	        		if(input == 's'){
+	        	if(contfase == 0){
+	        		do{
 		        		system("cls");
-		        		textoinicial();
-					}else if(input == 'n'){
-						system("cls");
-						fase1();
-					}else{
-						system("cls");
-						printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t  Comando invalido. Digite conforme as opcoes oferecidas.\n");
-						getch();
-					}
-				}while(w = 1);
+		        		printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t  Deseja jogar o tutorial? S ou N");
+		        		input = getche();
+		        		input = tolower(input);
+		        		if(input == 's'){
+			        		system("cls");
+			        		textoinicial();
+						}else if(input == 'n'){
+							system("cls");
+							fase1();
+						}else{
+							system("cls");
+							printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t  Comando invalido. Digite conforme as opcoes oferecidas.\n");
+							getch();
+						}
+					}while(w = 1);
+				}else{
+					do{
+		        		system("cls");
+		        		printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t  Deseja voltar de onde parou? S ou N");
+		        		input = getche();
+		        		input = tolower(input);
+		        		if(input == 's'){
+			        		if(contfase == 1){
+			        			system("cls");
+			        			fase1();
+							}else if(contfase == 2){
+			        			system("cls");
+			        			fase2();
+							}else if(contfase == 3){
+			        			system("cls");
+			        			fase3();
+							}
+						}else if(input == 'n'){
+							do{
+			        		system("cls");
+			        		printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t  Deseja jogar o tutorial? S ou N");
+			        		input = getche();
+			        		input = tolower(input);
+			        		if(input == 's'){
+				        		system("cls");
+				        		textoinicial();
+							}else if(input == 'n'){
+								system("cls");
+								fase1();
+							}else{
+								system("cls");
+								printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t  Comando invalido. Digite conforme as opcoes oferecidas.\n");
+								getch();
+							}
+						}while(w = 1);
+						}else{
+							system("cls");
+							printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t  Comando invalido. Digite conforme as opcoes oferecidas.\n");
+							getch();
+						}
+					}while(w = 1);
+				}
+	        	
 	        	
 	        	
 	        }
 			else if (input == 'b') {
 				w = 1;
 				while (w == 1) {
-		 			printf("\n\n\n\t\t\t\t\t\t\t\t\t\tW: O jogador movimenta uma unidade para cima.\n\n\n\t\t\t\t\t\t\t\t\t\tA: O jogador movimenta uma unidade para esquerda.\n\n\n\t\t\t\t\t\t\t\t\t\tS: O jogador movimenta uma unidade para baixo.\n\n\n\t\t\t\t\t\t\t\t\t\tD: O jogador movimenta uma unidade para direita.\n\n\n\t\t\t\t\t\t\t\t\t\tI: O jogador interage com o objeto que esta em cima.");
-	        		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t@ : Chave.\n\n\n\t\t\t\t\t\t\t\t\t\tD : Porta fechada.\n\n\n\t\t\t\t\t\t\t\t\t\t= : Porta aberta.\n\n\n\t\t\t\t\t\t\t\t\t\to : Bot?o que o player pode interagir.\n\n\n\t\t\t\t\t\t\t\t\t\t0 : Portal.");
-	       	 		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t# : Espinho que mata o player ao encostrar nele, reiniciando a fase.\n\n\n\t\t\t\t\t\t\t\t\t\tX : Monstro que se move aleatoriamente pelo mapa.\n\n\n\t\t\t\t\t\t\t\t\t\te : Monstro que possui um comportamento contr?rio ao do jogador.\n\n\n\t\t\t\t\t\t\t\t\t\tV : Monstro que te segue.\n\n\n\n\n");
-	       	 		printf("\t\t\t\t\t\t\t\t\t\t--Pressione qualquer tecla para voltar para o Menu--\n\n\t");
+		 			printf("\n\n\n\t\t\t\t\t\t\t\t\t\tW: O jogador movimenta uma unidade para cima.\n\n\n\t\t\t\t\t\t\t\t\t\tA: O jogador movimenta uma unidade para esquerda.\n\n\n\t\t\t\t\t\t\t\t\t\tS: O jogador movimenta uma unidade para baixo.\n\n\n\t\t\t\t\t\t\t\t\t\tD: O jogador movimenta uma unidade para direita.\n\n\n\t\t\t\t\t\t\t\t\t\tI: O jogador interage com o objeto.");
+	        		printf("\n\n\n\t\t\t\t\t\t\t\t\t\tPara avançar de fase, é necessário que o jogador insira\n\t\t\t\t\t\t\t\t\t\ta palavra descriptografada em um terminal dentro da fase\n\t\t\t\t\t\t\t\t\t\t(a palavra criptografada será mostrada durante o jogo)");
+	       	 		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t--Pressione qualquer tecla para voltar para o Menu--\n\n\t");
 	       	 		getch();
 	      	  		w = 0;
 	      	  		system("cls");
@@ -1483,21 +1636,8 @@
 		srand(time(NULL));
 		
 		setlocale(LC_ALL, "Portuguese");
-		//system("color 2");
-		system("color F1");
+		system("color 2");
+		//system("color F1");
 		
-		//textoinicial();
 		mainmenu();
-		//faseTutorial();
-		//gameover();
-		//fase1();
-		//fase2();
-		//fase3();
-		//morreu();
-		//ending();
-		
-		//perguntaTutorial();
-		//sextou();
-		//dica21();
-		//dica11();
 	}
