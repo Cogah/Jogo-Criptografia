@@ -15,6 +15,99 @@
 		submap = mapa auxiliar(contera apenas as informacoes do mapa original)
 	*/
 	
+	void playermove(){//MECANICA DE MOVIMENTO DO PLAYER==============================================================================================
+		if(input == 'w'){
+			
+			if(map[x-1][y] != '*' && map[x-1][y] != 'D' && map[x-1][y] != '=' && map[x-1][y] != 'O' && map[x-1][y] != 'x' && map[x-1][y] != '@' && map[x-1][y] != '#' && map[x-1][y] != '+' && map[x-1][y] != ']'){
+				if(submap[x][y] == '@' ){
+					map[x][y] = '@';
+				}
+				else if(submap[x][y] == '0' ){
+					map[x][y] = '0';
+				}
+				else if(submap[x][y] == 'o' ){
+					map[x][y] = 'o';
+				}
+				else if(map[x][y] == '#'  ){
+					map[x][y] = '#';
+				}
+				else{
+					map[x][y] = ' ';
+				}
+				
+				map[x -1][y] = '&';
+				x = x -1;
+			}
+	
+		}
+		else if(input == 'a'){
+			
+			if(map[x][y-1] != '*' && map[x][y-1] != 'D' && map[x][y-1] != '=' && map[x][y-1] != 'O' && map[x][y-1] != 'x' && map[x][y-1] != '@' && map[x][y-1] != '#' && map[x][y-1] != '+' && map[x][y-1] != ']'){
+				if(submap[x][y] == '@' ){
+					map[x][y] = '@';
+				}
+				else if(submap[x][y] == '0' ){
+					map[x][y] = '0';
+				}
+				else if(submap[x][y] == 'o' ){
+					map[x][y] = 'o';
+				}
+				else if(map[x][y] == '#' ){
+					map[x][y] = '#';
+				}
+				else{
+					map[x][y] = ' ';
+				}
+				
+				map[x][y-1] = '&';
+		 		y = y - 1;
+			}
+		}
+		else if(input == 's'){
+			if(map[x+1][y] != '*' && map[x+1][y] != 'D' && map[x+1][y] != '=' && map[x+1][y] != 'O' && map[x+1][y] != 'x' && map[x+1][y] != '@' && map[x+1][y] != '#' && map[x+1][y] != '+' && map[x+1][y] != ']'){
+				if(submap[x][y] == '@' ){
+					map[x][y] = '@';
+				}
+				else if(submap[x][y] == '0' ){
+					map[x][y] = '0';
+				}
+				else if(submap[x][y] == 'o' ){
+					map[x][y] = 'o';
+				}
+				else if(map[x][y] == '#' ){
+					map[x][y] = '#';
+				}
+				else{
+					map[x][y] = ' ';
+				}
+				map[x+1][y] = '&';
+				x = x+1;
+			}
+		}
+		else if(input == 'd'){
+			if(map[x][y+1] != '*' && map[x][y+1] != 'D' && map[x][y+1] != '=' && map[x][y+1] != 'O' && map[x][y+1] != 'x' && map[x][y+1] != '@' && map[x][y+1] != '#' && map[x][y+1] != '+' && map[x][y+1] != ']'){
+				if(submap[x][y] == '@' ){
+					map[x][y] = '@';
+				}
+				else if(submap[x][y] == '0' ){
+					map[x][y] = '0';
+				}
+				else if(submap[x][y] == 'o' ){
+					map[x][y] = 'o';
+				}
+				else if(map[x][y] == '#' ){
+					map[x][y] = '#';
+				}
+				else{
+					map[x][y] = ' ';
+				}
+				map[x][y+1] = '&';
+		 		y = y + 1;
+			}
+		}else if(input == 'q'){
+			mainmenu();
+		}
+	}
 	
 	void perguntaTutorial(){
 		if(primeiraVezLendo == 1){
@@ -89,6 +182,9 @@
 		 	concluido = 1;
 			getch();
 		}else{
+			if(primeiraVezLendo == 1){
+				return;
+			}
 			life--;
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t   -- Resposta incorreta --\n");
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t -- tentativas restantes: %d --\n", life);
@@ -136,7 +232,7 @@
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |   Vamos começar o verdadeiro desafio:   |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
-		printf("\t\t\t\t\t\t\t\t           |   |                 sureohp                 |    |\n");
+		printf("\t\t\t\t\t\t\t\t           |   |                 Sureohp                 |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
@@ -168,6 +264,9 @@
 		 	concluido = 1;
 			getch();
 		}else{
+			if(primeiraVezLendo == 1){
+				return;
+			}
 			life--;
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t   -- Resposta incorreta --\n");
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t -- tentativas restantes: %d --\n", life);
@@ -216,7 +315,7 @@
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |  Que tal elevarmos um pouco o desafio?  |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
-		printf("\t\t\t\t\t\t\t\t           |   |                Hmfqqjslj                |    |\n");
+		printf("\t\t\t\t\t\t\t\t           |   |                Ingrrktmk                |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
 		printf("\t\t\t\t\t\t\t\t           |   |                                         |    |\n");
@@ -248,6 +347,9 @@
 		 	concluido = 1;
 			getch();
 		}else{
+			if(primeiraVezLendo == 1){
+				return;
+			}
 			life--;
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t   -- Resposta incorreta --\n");
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t -- tentativas restantes: %d --\n", life);
@@ -326,7 +428,11 @@
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t   -- Resposta correta --\n");
 		 	concluido = 1;
 			getch();
+		}else if(strcmp(resposta, " ") == 0){
 		}else{
+			if(primeiraVezLendo == 1){
+				return;
+			}
 			life--;
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t   -- Resposta incorreta --\n");
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t -- tentativas restantes: %d --\n", life);
@@ -335,31 +441,157 @@
 	}
 	
 	void dica01(){
-		    printf("\t\t\t\t\t\t\t\t\t __________________________________________________\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ======DAILY NEWS=== ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|==C ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= =====o=== ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ==M====== ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= =====I=== ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= =====OC== ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=U= ========= ========= ========= ====D==== ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ======EQ= ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= =====U=== =======E= =====M=== ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ===TAL=== ========= ========= ========= ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ========= ========= ========= ===E===== ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|=== ===ND==== ========= ========= ====O==== ======|\n");
-		    printf("\t\t\t\t\t\t\t\t\t|__________________________________________________|\n");
-		    getch();
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t __________________________________________________\n");
+		printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		printf("\t\t\t\t\t\t\t\t\t|=== ========= =====ARGO NEWS===== ========= ======|\n");
+		printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		printf("\t\t\t\t\t\t\t\t\t|          CIFRA DE CÉSAR: COMO SE USA?            |\n");
+		printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| A Cifra de César é uma técnica de criptografia   |\n");
+		printf("\t\t\t\t\t\t\t\t\t| simples criada por Júlio César para proteger     |\n");
+		printf("\t\t\t\t\t\t\t\t\t| mensagens militares. Ela funciona deslocando     |\n");
+		printf("\t\t\t\t\t\t\t\t\t| cada letra do texto original um número fixo de   |\n");
+		printf("\t\t\t\t\t\t\t\t\t| posições no alfabeto. Por exemplo, com um        |\n");
+		printf("\t\t\t\t\t\t\t\t\t| deslocamento de 3, \"A\" vira \"D\", \"B\" vira \"E\" e  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| assim por diante; ao chegar ao fim do alfabeto,  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| ele reinicia (ex.: \"Y\" vira \"B\"). Para decifrar, |\n");
+		printf("\t\t\t\t\t\t\t\t\t| basta inverter o deslocamento. Apesar de ser     |\n");
+		printf("\t\t\t\t\t\t\t\t\t| insegura para usos modernos, a Cifra de César é  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| amplamente utilizada para ensinar os princípios  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| básicos da criptografia e como introdução a      |\n");
+		printf("\t\t\t\t\t\t\t\t\t| sistemas mais complexos. Hoje, ela também        |\n");
+		printf("\t\t\t\t\t\t\t\t\t| aparece em jogos, desafios e brincadeiras de     |\n");
+		printf("\t\t\t\t\t\t\t\t\t| mensagens secretas. Que tal testar? Escolha um   |\n");
+		printf("\t\t\t\t\t\t\t\t\t| número para o deslocamento, escreva uma frase e  |\n");
+		printf("\t\t\t\t\t\t\t\t\t| crie sua própria mensagem criptografada!         |\n");
+		printf("\t\t\t\t\t\t\t\t\t|__________________________________________________|\n");
+		getch();
+	}
+	void dica02(){
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t   o                   o\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \\               __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t     \\___          /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t         \\__    __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t            \\  /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t ____________\\/____________\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t/   ____________________   \\\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  /__/  \\__   \\__/  \\__\\  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  \\________\\___________/  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|                 _   _    |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  TV IL           (|) (/) |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t\\_________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \"--\"           \"--\"\n");
+	    printf("\n\t\t\t\t\t\t\t\t     --Professor: Para resolver este problema, que tal pegarmos o número 1 como exemplo?--\n");
+	    getch();
+	}
+	
+	void dica11(){
+	    printf("\n\n\t\t\t\t\t\t\t\t\t                       @@@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                      @@@@@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                     @@@@@@@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                    @@@@@@@@@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                   @@@@@    @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                  @@@@@      @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                 @@@@@        @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t                @@@@@   @@@    @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t               @@@@@   @@@@@    @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t              @@@@@    @@@@@     @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t             @@@@@     @@@@@      @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t            @@@@@      @@@@@       @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t           @@@@@       @@@@@        @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t          @@@@@        @@@@@         @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t         @@@@@         @@@@@          @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t        @@@@@          @@@@@           @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t       @@@@@            @@@             @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t      @@@@@                              @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t     @@@@@             @@@@@              @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t    @@@@@             @@@@@@@              @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t   @@@@@               @@@@@                @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t  @@@@@                                      @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t @@@@@                                        @@@@@\n");
+	    printf("\t\t\t\t\t\t\t\t\t@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+	    printf("\n\t\t\t\t\t\t--AVISO: As vezes as dicas podem indicar não o número do deslocamento, mas sim a palavra da resposta--\n");
+
+		getch();
+	}
+	void dica12(){
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t   o                   o\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t    \\               __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t     \\___          /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t         \\__    __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t            \\  /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t ____________\\/____________\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t/   ____________________   \\\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t|  /__/  \\__   \\__/  \\__\\  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t|  \\________\\___________/  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t|                 _   _    |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t|  TV IL           (|) (/) |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\\_________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t    \"--\"           \"--\"\n");
+	    printf("\n\t\t\t\t--Repórter: Apesar de ter apresentado problemas no joelho pouco tempo antes da competição, o corredor conseguir conquistar a medalha de bronze!--\n");
+	    getch();
+	}
+	void dica03(){
+	    printf("\n\n\t\t\t\t\t\t\t\t\t\t    __________________   __________________\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t.-/|                  \\ /                  |\\-.\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||     Shrek 1:      |    Capítulo 1     ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||     O Livro       |     A Prisão      ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||  ===============  |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||                   |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||  ===============  |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||                   |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||  ===============  |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||                   |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||  ===============  |  ===============  ||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||||__________________ | __________________||||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t||/===================\\|/===================\\||\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t`--------------------~___~-------------------''\n");
+	    getch();
+	}
+	 
+	void dica21(){
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t   o                   o\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \\               __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t     \\___          /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t         \\__    __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t            \\  /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t ____________\\/____________\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t/   ____________________   \\\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  /__/  \\__   \\__/  \\__\\  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  \\________\\___________/  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|                 _   _    |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  TV 66           (|) (/) |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t\\_________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \"--\"           \"--\"\n");
+	    printf("\n\t\t\t\t\t\t\t\t --Apresentador: Boa noite e sejam bem vindos ao canal das 6:00! No programa de hoje...--\n");
+	    getch();
 	}
 	void sextou(){
-		printf("\t\t\t\t\t\t\t\t\t.===================================================================.\n");
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t.===================================================================.\n");
 	    printf("\t\t\t\t\t\t\t\t\t||     		 ____  ____  _  _  ____  __   _  _  _   	   ||\n");
 	    printf("\t\t\t\t\t\t\t\t\t|| 		/ ___)(  __)( \\/ )(_  _)/  \\ / )( \\/ \\  	   ||\n");
 	    printf("\t\t\t\t\t\t\t\t\t|| 		\\___ \\ ) _)  )  (   )( (  O )) \\/ (\\_/   	   ||\n");
@@ -387,98 +619,114 @@
 	    printf("\t\t\t\t\t\t\t\t\t'==================================================================='\n");
 	    getch();
 	}
-	void playermove(){//MECANICA DE MOVIMENTO DO PLAYER==============================================================================================
-		if(input == 'w'){
-			
-			if(map[x-1][y] != '*' && map[x-1][y] != 'D' && map[x-1][y] != '=' && map[x-1][y] != 'O' && map[x-1][y] != 'x'){
-				if(submap[x][y] == '@' ){
-					map[x][y] = '@';
-				}
-				else if(submap[x][y] == '0' ){
-					map[x][y] = '0';
-				}
-				else if(submap[x][y] == 'o' ){
-					map[x][y] = 'o';
-				}
-				else if(map[x][y] == '#'  ){
-					map[x][y] = '#';
-				}
-				else{
-					map[x][y] = ' ';
-				}
-				
-				map[x -1][y] = '&';
-				x = x -1;
-			}
+	void dica31(){
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t __________________________________________________\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t| Você está provando seu valor na criptografia por |\n");
+		    printf("\t\t\t\t\t\t\t\t\t| um tempinho já. Que tal relaxar um pouco com uma |\n");
+		    printf("\t\t\t\t\t\t\t\t\t| pequena equação?                                 |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|              sqr(2(X+2)-3) + 1 = 4               |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|  Qual será o valor de X nessa equação?           |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|                                                  |\n");
+		    printf("\t\t\t\t\t\t\t\t\t|__________________________________________________|\n");
+	    getch();
+	}
+	void dica32(){
+		printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t   o                   o\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \\               __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t     \\___          /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t         \\__    __/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t            \\  /\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t ____________\\/____________\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t/   ____________________   \\\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  /__/  \\__   \\__/  \\__\\  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |    __   \\__    __   \\| |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t| |\\__/  \\__   \\__/  \\__ | |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  \\________\\___________/  |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|                 _   _    |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t|  TV IL           (|) (/) |\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t\\_________________________/\n");
+	    printf("\t\t\t\t\t\t\t\t\t\t\t\t    \"--\"           \"--\"\n");
+	    printf("\n\t\t\t\t\t\t\t\t\t\t    --Está passando o filme da Branca de neve da TV--\n");
+	    getch();
+	}
 	
-		}
-		else if(input == 'a'){
-			
-			if(map[x][y-1] != '*' && map[x][y-1] != 'D' && map[x][y-1] != '=' && map[x][y-1] != 'O' && map[x][y-1] != 'x'){
-				if(submap[x][y] == '@' ){
-					map[x][y] = '@';
-				}
-				else if(submap[x][y] == '0' ){
-					map[x][y] = '0';
-				}
-				else if(submap[x][y] == 'o' ){
-					map[x][y] = 'o';
-				}
-				else if(map[x][y] == '#' ){
-					map[x][y] = '#';
-				}
-				else{
-					map[x][y] = ' ';
-				}
-				
-				map[x][y-1] = '&';
-		 		y = y - 1;
-			}
-		}
-		else if(input == 's'){
-			if(map[x+1][y] != '*' && map[x+1][y] != 'D' && map[x+1][y] != '=' && map[x+1][y] != 'O' && map[x+1][y] != 'x'){
-				if(submap[x][y] == '@' ){
-					map[x][y] = '@';
-				}
-				else if(submap[x][y] == '0' ){
-					map[x][y] = '0';
-				}
-				else if(submap[x][y] == 'o' ){
-					map[x][y] = 'o';
-				}
-				else if(map[x][y] == '#' ){
-					map[x][y] = '#';
-				}
-				else{
-					map[x][y] = ' ';
-				}
-				map[x+1][y] = '&';
-				x = x+1;
-			}
-		}
-		else if(input == 'd'){
-			if(map[x][y+1] != '*' && map[x][y+1] != 'D' && map[x][y+1] != '=' && map[x][y+1] != 'O' && map[x][y+1] != 'x'){
-				if(submap[x][y] == '@' ){
-					map[x][y] = '@';
-				}
-				else if(submap[x][y] == '0' ){
-					map[x][y] = '0';
-				}
-				else if(submap[x][y] == 'o' ){
-					map[x][y] = 'o';
-				}
-				else if(map[x][y] == '#' ){
-					map[x][y] = '#';
-				}
-				else{
-					map[x][y] = ' ';
-				}
-				map[x][y+1] = '&';
-		 		y = y + 1;
-			}
-		}else if(input == 'q'){
-			mainmenu();
-		}
+	void dica33(){
+	    printf("\n\n\t\t\t\t\t\t\t                                        zzzzzzzzzzzzzzzzzz                                          \n");
+	    printf("\t\t\t\t\t\t\t                                   zzyslea97655444555790bflsyzzz                                    \n");
+	    printf("\t\t\t\t\t\t\t                               zzvg3222479aaaaaaaaaaaaaa07643329myzz                                \n");
+	    printf("\t\t\t\t\t\t\t                          zzzti63468aaabceghjklllllkjihgedcbaa085540nvzz                            \n");
+	    printf("\t\t\t\t\t\t\t                        zzug43690abehjkkjhgfffeeeeeeefgghjklkigdbaa9649jwzz                         \n");
+	    printf("\t\t\t\t\t\t\t                       zq724800dikkjfddccb09877776777890cddddegjkkjeaa0650qz                        \n");
+	    printf("\t\t\t\t\t\t\t                    zzo32590ahkjfcccb965544321ZZZZYZZ124555570ccdehkljdbb843kyzz                    \n");
+	    printf("\t\t\t\t\t\t\t                   zq73600djkhdca96543ZXVVX146788887531XWVWX134560cdeiklgca856kyz                   \n");
+	    printf("\t\t\t\t\t\t\t                 zt92590ejkgcb0653YVUX8krxzzzzz     zzzzytoi9ZVWY3570degjkica957mzz                 \n");
+	    printf("\t\t\t\t\t\t\t                yj2390djkgcc0652VUWfvyzz                   zzzxq5VWZ568cdfjliba84buz                \n");
+	    printf("\t\t\t\t\t\t\t              zw61690gjhbb9541VV4szz                            zyk1VX357bdfklgba65pzz              \n");
+	    printf("\t\t\t\t\t\t\t           zzl2279djidb0641VWavz                                  zr8WW257cehkjcb85exz             \n");
+	    printf("\t\t\t\t\t\t\t            yh1380fjgba642WU6tzz                                     zr5WY460efklfb95dwz            \n");
+	    printf("\t\t\t\t\t\t\t           zdZ590hjda954YTVpz                                          zrZW268dejlgba5bx            \n");
+	    printf("\t\t\t\t\t\t\t         zyaZ490jida943VT8vz                                            zv0XY57cehlgb06dzz          \n");
+	    printf("\t\t\t\t\t\t\t        zye148aijda842VTdzz                                              zzhWY46behlhca7hzz         \n");
+	    printf("\t\t\t\t\t\t\t        zn2380hjca743VUmz                                                  zoWX46bejlfb87nz         \n");
+	    printf("\t\t\t\t\t\t\t       zw7168eic0843VVjz                                                    zkYY57celkdb7buz        \n");
+	    printf("\t\t\t\t\t\t\t       zfY58bjf0842WVdyz                                                     w0W160egmhc06kz        \n");
+	    printf("\t\t\t\t\t\t\t      zwZ3bejib953WT3xz                                                      zv3Y5ahgjortuuvxz      \n");
+	    printf("\t\t\t\t\t\t\t      zmlqrrrrpjjopnpy                                                        zlisuuutuuuuuuuwz     \n");
+	    printf("\t\t\t\t\t\t\t   zzzxprrrrrrrssssssrwyzzz                                                zzxvutuuuuuttttuuutttuyz \n");
+	    printf("\t\t\t\t\t\t\t zyspqqqqppprrrqssssssssrrwz                                              zwtuuuuttuuuuuttuuttuuuuyz\n");
+	    printf("\t\t\t\t\t\t\t zsqrrqpqrrqprsssrqrrrsttssy                                              ztuuutuuuuuuuuuuuuuuuuuuyz\n");
+	    printf("\t\t\t\t\t\t\t zrqrqqrrrrssssssssssssstruz                                              zrqrqqrrrrssssssssssssstruz\n");
+	    printf("\t\t\t\t\t\t\t zzsqqqqrrrrrrrrrrsssrsstyz                                                zzsqqqqrrrrrrrrrrsssrsstyz\n");
+	    printf("\t\t\t\t\t\t\t   zzzzz zzzz zzzz zzzzz                                                     zzzzz zzzz zzzz zzzzz   \n");
+	    printf("\n\n\t\t\t\t\t\t\t\t        --É possível ver um arco-íris com todas as suas cores à distância--\n");
+	    getch();
+	}
+	void dica34(){
+	    printf("\n\n\t\t\t\t\t\t\t\t      Dom       Seg       Ter       Qua       Qui       Sex       Sáb     \n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |1        |2        |3        |4        |5        |6        |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |11:40    |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |Apres.   |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |Trabalho |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |Girotto  |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    printf("\t\t\t\t\t\t\t\t  |?        |8        |9        |10       |11       |12       |13       |\n");
+	    printf("\t\t\t\t\t\t\t\t  |Início da|         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |nova     |         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |tentativa|         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    printf("\t\t\t\t\t\t\t\t  |??       |15       |16       |17       |18       |19       |20       |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |  \\  /   |Dia de   |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |   \\/    |coleta   |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |   /\\    |do lixo  |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |  /  \\   |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    printf("\t\t\t\t\t\t\t\t  |??       |22       |23       |24       |25       |26       |27       |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |Véspera  |Natal    |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |de       |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |Natal    |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    printf("\t\t\t\t\t\t\t\t  |??       |29       |30       |31       |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |Véspera  |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |de       |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |Ano Novo |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  |         |         |         |         |         |         |         |\n");
+	    printf("\t\t\t\t\t\t\t\t  -----------------------------------------------------------------------\n");
+	    getch();
 	}
 	
 	void gameover(){
@@ -561,13 +809,25 @@
 			}
 		}
 		
-		map [4][7] = 'O';
-		map [5][7] = '=';
-		submap [4][10] = 'O';
-		submap [5][10] = '=';
+		map [17][10] = 'O';
+		map [18][10] = '=';
+		submap [17][10] = 'O';
+		submap [18][10] = '=';
 		
-		map [14][17] = 'x';
-		submap [14][17] = 'x';
+		map [6][7] = 'x';
+		submap [6][7] = 'x';
+		
+		map [18][18] = '#';
+		submap [18][18] = '#';
+		
+		map [14][3] = '@';
+		submap [14][3] = '@';
+		
+		map [7][15] = '+';
+		submap [7][15] = '+';
+		
+		map [9][0] = ']';
+		submap [9][0] = ']';
 		
 		map [x][y] = '&';
 	
@@ -611,6 +871,18 @@
 				else if(map[x][y-1] == 'x' || map[x][y+1] == 'x' || map[x-1][y] == 'x' || map[x+1][y] == 'x'){
 					dica01();
 					system("cls");
+				}else if(map[x][y-1] == '@' || map[x][y+1] == '@' || map[x-1][y] == '@' || map[x+1][y] == '@'){
+					dica34();
+					system("cls");
+				}else if(map[x][y-1] == '#' || map[x][y+1] == '#' || map[x-1][y] == '#' || map[x+1][y] == '#'){
+					dica32();
+					system("cls");
+				}else if(map[x][y-1] == '+' || map[x][y+1] == '+' || map[x-1][y] == '+' || map[x+1][y] == '+'){
+					dica31();
+					system("cls");
+				}else if(map[x][y-1] == ']'){
+					dica33();
+					system("cls");
 				}
 			}
 			
@@ -647,13 +919,19 @@
 			}
 		}
 		
-		map [4][7] = 'O';
-		map [5][7] = '=';
-		submap [4][10] = 'O';
-		submap [5][10] = '=';
+		map [17][15] = 'O';
+		map [18][15] = '=';
+		submap [17][15] = 'O';
+		submap [18][15] = '=';
 		
-		map [14][17] = 'x';
-		submap [14][17] = 'x';
+		map [18][11] = 'x';
+		submap [18][11] = 'x';
+		
+		map [7][10] = '@';
+		submap [7][10] = '@';
+		
+		map [12][1] = '#';
+		submap [12][1] = '#';
 		
 		map [x][y] = '&';
 	
@@ -695,7 +973,13 @@
 					system("cls");
 				}
 				else if(map[x][y-1] == 'x' || map[x][y+1] == 'x' || map[x-1][y] == 'x' || map[x+1][y] == 'x'){
+					dica01();
+					system("cls");
+				}else if(map[x][y-1] == '@' || map[x][y+1] == '@' || map[x-1][y] == '@' || map[x+1][y] == '@'){
 					sextou();
+					system("cls");
+				}else if(map[x][y-1] == '#' || map[x][y+1] == '#' || map[x-1][y] == '#' || map[x+1][y] == '#'){
+					dica21();
 					system("cls");
 				}
 			}
@@ -736,6 +1020,12 @@
 		map [5][7] = '=';
 		submap [4][10] = 'O';
 		submap [5][10] = '=';
+		
+		map [8][4] = '@';
+		submap [8][4] = '@';
+		
+		map [4][15] = '#';
+		submap [4][15] = '#';
 		
 		map [14][17] = 'x';
 		submap [14][17] = 'x';
@@ -782,6 +1072,12 @@
 				else if(map[x][y-1] == 'x' || map[x][y+1] == 'x' || map[x-1][y] == 'x' || map[x+1][y] == 'x'){
 					dica01();
 					system("cls");
+				}else if(map[x][y-1] == '@' || map[x][y+1] == '@' || map[x-1][y] == '@' || map[x+1][y] == '@'){
+					dica11();
+					system("cls");
+				}else if(map[x][y-1] == '#' || map[x][y+1] == '#' || map[x-1][y] == '#' || map[x+1][y] == '#'){
+					dica12();
+					system("cls");
 				}
 			}
 			
@@ -822,8 +1118,14 @@
 		submap [7][10] = 'O';
 		submap [8][10] = '=';
 		
-		map [14][17] = 'x';
-		submap [14][17] = 'x';
+		map [14][10] = 'x';
+		submap [14][10] = 'x';
+		
+		map [9][7] = '@';
+		submap [9][7] = '@';
+		
+		map [6][14] = '#';
+		submap [6][14] = '#';
 		
 		map [x][y] = '&';
 	
@@ -863,6 +1165,15 @@
 				}
 				else if(map[x][y-1] == 'x' || map[x][y+1] == 'x' || map[x-1][y] == 'x' || map[x+1][y] == 'x'){
 					dica01();
+					system("cls");
+				}else if(map[x][y-1] == '@' || map[x][y+1] == '@' || map[x-1][y] == '@' || map[x+1][y] == '@'){
+					dica03();
+					system("cls");
+				}else if(map[x][y-1] == '#' || map[x][y+1] == '#' || map[x-1][y] == '#' || map[x+1][y] == '#'){
+					dica02();
+					system("cls");
+				}else if(map[x][y-1] == '+' || map[x][y+1] == '+' || map[x-1][y] == '+' || map[x+1][y] == '+'){
+					dica31();
 					system("cls");
 				}
 			}
@@ -1172,8 +1483,8 @@
 		srand(time(NULL));
 		
 		setlocale(LC_ALL, "Portuguese");
-		system("color 2");
-		//system("color F1");
+		//system("color 2");
+		system("color F1");
 		
 		//textoinicial();
 		mainmenu();
@@ -1187,4 +1498,6 @@
 		
 		//perguntaTutorial();
 		//sextou();
+		//dica21();
+		//dica11();
 	}
