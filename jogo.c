@@ -4,7 +4,7 @@
 	#include <locale.h> //Biblioteca que vai permitir o suporte de caracteres da l?ngua portuguesa
 
 
-	//Vari?veis globais utilizadas ao longo do c?digo
+	//Variáveis globais utilizadas ao longo do código
 	int w, jan = 0, i, j, x, y,xX,yX,xV,yV,xe,ye, roll, life = 3, contfase = 0, zoacaomorte;
 	char input, map[60][60],submap[60][60];
 	int concluido = 0, primeiraVezLendo = 1;
@@ -868,6 +868,13 @@
 		contfase = 0;
 		x = 15;
 		y = 10;	
+		
+		for(i = 0; i <= 20; i++){
+			for(j = 0;j<=20; j++){
+				map[i][j] = ' ';
+			}
+		}
+		
 		for(i = 7; i <= 16; i++){
 			for(j = 8;j<=12; j++){
 				map[i][j] = '*';
